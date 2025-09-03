@@ -1,52 +1,38 @@
 # Neutron Simulation
 
-This project is a Geant4 simulation developed as part of the CERN BL4S (Beamline for Schools) competition. Its purpose is to study neutron production caused by a particle beam (such as electrons, pions, kaons, and protons) striking a cylindrical target, 60 cm in length and 10 cm in diameter. The simulation records the energy and angular distributions of the neutrons exiting the target and stores this data in `.root` files for analysis.
+This project is a Geant4 simulation developed as part of the CERN BL4S (Beamline for Schools) competition. It's designed to study neutron production caused by a particle beam striking a target. The simulation records the energy and angular distributions of neutrons exiting the target, storing the data in `.root` files for subsequent analysis.
 
-## Project Structure
+## Features
 
-The project includes the following core Geant4 classes and files:
+* **Customizable Particle Beam**: Easily modify the type and number of particles in the beam.
+* **Detailed Data Collection**: Records the kinetic energy and exit angle for each detected neutron.
+* **ROOT Integration**: Outputs data directly to `.root` files for seamless analysis.
+* **Optimized Performance**: Runs in a non-graphical mode for fast, efficient simulations.
 
-- `CMakeLists.txt`: The CMake build file used to compile the project.
-- `src/main.cc`: The main entry point for the simulation.
-- `src/DetectorConstruction.cc`: Defines the experimental setup, specifically the cylindrical target.
-- `src/PrimaryGeneratorAction.cc`: Generates the particle beam and implements the "particle train" logic.
-- `src/src/RunAction.cc`: Collects neutron data throughout the simulation and saves it to files on disk.
-- `src/SteppingAction.cc`: Tracks each particle's step, identifies neutrons, and passes their data to `RunAction`.
-- `src/ActionInitialization.cc`: Initializes all user action classes (`RunAction`, `SteppingAction`, `PrimaryGeneratorAction`).
-- `include/`: Contains all the class header (`.hh`) files.
+## Getting Started
 
-## Setup and Compilation
+These instructions will get you a copy of the project up and running on your local machine.
 
-To run this project, you must have **Geant4 v11.3.0** and **ROOT** installed on your system.
+### Prerequisites
 
-1.  **Create the Folder Structure:**
-    Set up the following folder structure for your project.
-    ```
-    neutron-simulation/
-    ├── CMakeLists.txt
-    ├── src/
-    └── include/
-    ```
+To compile and run this simulation, you need to have the following installed:
 
-2.  **Copy the Files:**
-    Copy all source (`.cc`) and header (`.hh`) files into their respective folders.
+* **Geant4 v11.3.0**
+* **ROOT**
+* **CMake**
+* **A C++ compiler** (e.g., g++)
 
-3.  **Compile the Project:**
-    Navigate to the project's root directory (e.g., `neutron-simulation/`), create a `build` folder, and enter it.
-    ```bash
-    mkdir build
-    cd build
-    ```
-    Then, run the CMake and `make` commands to compile the project.
-    ```bash
-    cmake ..
-    make -j$(nproc)
-    ```
-    These commands will create an executable file named `geant4-proje` inside the `build` directory.
+### Installation
+
+Use `git clone` to download the project to your local machine.
+```bash
+git clone https://github.com/musluogluu/neutronSimulation-v2.git
+cd neutronSimulation-v2
+```
 
 ## Running the Simulation
 
-To run the simulation, use the following command from the `build` directory:
-
 ```bash
+cd build
 ./simulation
+```
