@@ -30,8 +30,9 @@ git clone https://github.com/musluogluu/neutronSimulation-v2.git
 cd neutronSimulation-v2
 ```
 
-## Running the Simulation
+### Running the Simulation
 
+To run this simulation, you need the executable file.
 ```bash
 cd build
 ./simulation
