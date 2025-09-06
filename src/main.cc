@@ -23,7 +23,7 @@ int main()
     runManager->Initialize();
 
     // Toplam parçacık sayısı
-    G4int totalParticles = 3666 + 1000 + 1668 + 333;
+    G4int totalParticles = 440 + 18860 + 600;
     runManager->BeamOn(totalParticles);
 
     // Temizleme

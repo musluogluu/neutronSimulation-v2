@@ -11,10 +11,9 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
     fParticleGun = new G4ParticleGun(1);
     
     // Işın treni partikül listesini oluşturur
-    fParticleList.push_back({"e+", 3666}); // Pozitron
-    fParticleList.push_back({"proton", 1000}); // Proton
-    fParticleList.push_back({"pi+", 1668}); // Pozitif Pion
-    fParticleList.push_back({"kaon+", 333}); // Pozitif Kaon
+    fParticleList.push_back({"e-", 600}); // elektron
+    fParticleList.push_back({"pi-", 18860}); // negatif pion
+    fParticleList.push_back({"kaon-", 440}); // negatif kaon
 
     // Kütleye göre sıralama
     G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
@@ -40,7 +39,7 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
         
         if (particle) {
             fParticleGun->SetParticleDefinition(particle);
-            fParticleGun->SetParticleEnergy(1.0 * GeV);
+            fParticleGun->SetParticleEnergy(10.0 * GeV);
             fParticleGun->SetParticlePosition(G4ThreeVector(0., 0., -30. * cm));
             fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., 1.));
 

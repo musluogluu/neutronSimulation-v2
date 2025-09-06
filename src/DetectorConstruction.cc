@@ -26,8 +26,8 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
     // Silindiri oluşturur
     G4double innerRadius = 0. * cm;
-    G4double outerRadius = 5. * cm; // 10 cm çap
-    G4double halfLength = 30. * cm; // 60 cm uzunluk
+    G4double outerRadius = 5. * cm;
+    G4double halfLength = 30. * cm; 
     G4Tubs* targetSolid = new G4Tubs("Target", innerRadius, outerRadius, halfLength, 0., 360.*deg);
     G4LogicalVolume* targetLogical = new G4LogicalVolume(targetSolid, targetMaterial, "Target");
 
